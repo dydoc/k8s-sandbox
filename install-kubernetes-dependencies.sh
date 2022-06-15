@@ -78,9 +78,10 @@ sudo apt-mark hold kubelet kubeadm kubectl
 }
 
 
-install_required_packages
-disable_swap
-configure_sysctl
 install_containerd_runtime
 install_nerdctl_cli
+disable_swap
+configure_sysctl
+install_required_packages
+
 
