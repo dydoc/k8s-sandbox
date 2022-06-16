@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
         box.vm.provision "shell", inline: "echo Hello, master"
         end
       if box.vm.hostname.match(/node0[1-3]/) then
-        #box.vm.provision "shell", path:"./configure-worker-nodes.sh", args: [MASTER_IP,]
+        box.vm.provision "shell", path:"./configure-worker-nodes.sh"
         box.vm.provision "shell", inline: "echo Hello, worker"
         end
     end
