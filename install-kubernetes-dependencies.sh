@@ -9,7 +9,7 @@ set -o errtrace
 
 disable_swap () 
 {
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sudo sed -i '/swap/s/^\(.*\)$/#\1/g' /etc/fstab
 sudo swapoff -a
 }
 
@@ -77,9 +77,8 @@ sudo apt-get -y install vim git curl wget kubelet=${K8S_VERSION} kubeadm=${K8S_V
 sudo apt-mark hold kubelet kubeadm kubectl
 }
 
-
-install_containerd_runtime
 install_nerdctl_cli
+install_containerd_runtime
 disable_swap
 configure_sysctl
 install_required_packages
